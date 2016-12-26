@@ -1,5 +1,5 @@
 # Kirby CMS Benutzerhandbuch
-**von Jannik Beyerstedt**, v1.0.0  
+**von Jannik Beyerstedt**, v1.1.0  
 
 
 ## Einführung:
@@ -15,14 +15,13 @@ Das Panel ist immer unter der URL `/panel` zu finden. Hier muss man sich zunäch
 Zuerst ist das sog. Dashboard zu sehen. Auf der linken Seite stehen immer die Seiten und Ordner der Webseite. Diese Module werden in den nächsten Kapiteln erklärt.
 
 ### Seiteneinstellungen/ Seitenvariablen
-Die globalen Einstellungen der Webseite geben alle Informationen wieder, die auf der gesamten Webseite gebrauct werden. Das Menü dafür ist unter dem Knopf ganz oben links unter "Einstellungen" zu finden. 
+Die globalen Einstellungen der Webseite geben alle Informationen wieder, die auf der gesamten Webseite gebraucht werden. Das Menü dafür ist unter dem Knopf ganz oben links unter "Einstellungen" zu finden.
 
 Die Felder sollten sich in der Regel selbst erklären, einige (vor allem die Metadaten) führe ich hier aber noch einmal auf:
 
 - Titel der Webseite: Name im Tab des Browsers
 - Autor: für Suchmaschinen
 - Beschreibung: der kurze Text bei den Suchergebnissen von google und co
-- Stichwörter:  auch für Suchmaschinen, wird zum Einordnen der Seite genutzt
 
 ### die Seitenstruktur
 In kirby gibt es erst einmal zwei Arten von Seiten: sichtbar und unsichtbar. Sichtbare Seiten werden bei meinen Webseiten dafür genutzt, dass diese in Menüs automatisch auftauchen.  
@@ -91,4 +90,3 @@ Um ein Bild in den Text einzufügen, das vorher in dieser Seite hochgeladen wurd
 Um eine Datei in den Text einzufügen. Auch hier kann man wieder einen Text festlegen.
 
 Es gibt noch viele weitere Möglichkeiten, dies sind aber die gängigsten. Bei manchen Seiten habe ich noch weitere Kirytags geschrieben oder installiert. Diese sind dann auch in der `x-Hilfe`-Seite zu finden.
-

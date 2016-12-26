@@ -1,21 +1,12 @@
 # Kirby CMS Administratorhandbuch
-**von Jannik Beyerstedt**, v1.0.0  
+**von Jannik Beyerstedt**, v1.1.0  
 *als Ergänzung zum Benutzerhandbuch*
 
 
 ## Einführung:
 Dieses Administratorhandbuch beschreibt etwas genauer den Aufbau von kirby und die manuellen Möglichkeiten.  
-Es wird jedoch nicht die gesamte Programmierung von kirby-Seiten beschrieben. Für weitergehende Fragen oder Probleme [kontaktieren Sie mich](mailto:jannik@beyerstedt.de) doch bitte oder schauen Sie selbst in die (englischsprachige) [Dokumentation von kirby](http://getkirby.com).
+Es wird jedoch nicht die gesamte Programmierung von kirby-Seiten beschrieben. Für weitergehende Fragen oder Probleme [kontaktieren Sie mich](mailto:code@jannikbeyerstedt.de) doch bitte oder schauen Sie selbst in die (englischsprachige) [Dokumentation von kirby](http://getkirby.com).
 
-
-## Updates *mit der Update-Seite*:
-Um die kirby-Installation zu aktualisieren kann man die (unsichtbare) Seite "update" im panel auswählen. Diese hat im panel selbst erst einmal keine Funktion, dafür muss man auf "Seite öffnen" klicken. Dann öffnet sich eine Seite, die nur sichtbar ist, wenn man angemeldet ist und die Benutzergruppe Admin hat.
-
-Über diese Seite können nun bash-scripte ausgeführt werden. Der Inhalt des Scripts, das ausgeführt wird, ist jeweils über den "ausführen"-Button zu sehen.  
-**Diese Scripte sind kein Spielzeug! Bitte nur ausführen, wenn die Auswirkungen bekannt sind!**  
-
-Für ein normales Update, das ich per Mail auch ankündige und dann vorher getestet habe, reicht der erste Button aus. Damit werden die kirby-Seite, kirby selbst und das panel, sowie alle Module aktualisiert. Danach wird dr cache geleert, damit die Seite neu generiert wird.
-Bitte lesen Sie sich die Ausgabe des Scripts durch! Eine Meldung wie `Not currently on any branch` sollte bitte umgehend gemeldet werden.
 
 ## neue Benutzer:
 Um einen neuen Benutzer anzulegen geht man im panel oben links auf diese drei waagerechten Striche und in diesem Menü auf "Benutzer".  
@@ -38,7 +29,7 @@ In diesem Kapitel wird die grundlegende Struktur von kirby (oberflächlich) erkl
 
 ### die Struktur von kirby
 In kirby wird der Inhalt ganz klar von den templates und damit der Funktion der Seite selbst getrennt. Der Inhalt liegt in dem Ordner `content`, alle Dateien zur Funktion der Seite in `site`, generische Bilder, wie Logos in `assets/images`.  
-In `site/templates` gibt es nun verschiedene Vorlagen für verschiedene Seiten. 
+In `site/templates` gibt es nun verschiedene Vorlagen für verschiedene Seiten.
 
 ### die Ordnerstruktur des Inhalts
 Im Ordnr `content` wird jede Seite durch einen Ordner repräsentiert. Diese Ordner muss mindestens ein Textdokument (.txt) enthalten, das den Inhalt der Seite einthält. Den Aufbau dieser Datei erkläre ich hier nicht weiter, da das panel für dessen Manipulation da ist.  

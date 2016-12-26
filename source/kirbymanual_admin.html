@@ -1,9 +1,273 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta charset="UTF-8">
+<title>kirbyManual_admin.html</title>
 <style>
+* {
+    overflow: visible !important;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    box-decoration-break: clone;
+}
+
+html, body {
+    background: #FFF;
+    font-family: "Segoe UI", Arial, freesans, sans-serif;
+    font-size: 10px;
+    line-height: 1.4;
+    color: #333;
+    word-wrap: break-word;
+	hyphens: auto;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 4px solid #EEE;
+}
+
+code {
+    padding: .1em .4em;
+    display: inline-block;
+    background-color: #f9f2f4;
+    color: #c7254e;
+    border-radius: 3px;
+    border: 0 none;
+    font: 9px Consolas, "Liberation Mono", Menlo, "Courier New", Courier, monospace;
+    hyphens: manual;
+}
+
+pre code {
+    padding: 15px;
+    display: block;
+    background-color: #F9F9F9;
+    color: #555;
+    font-size: 10px;
+    box-shadow: inset -1px -1px 0 rgba(0, 0, 0, .08);
+    word-wrap: normal;
+}
+
+/* replace light background for some hljs themes */
+code.github-css,
+code.github-gist-css,
+code.tomorrow-css,
+code.default-css,
+code.googlecode-css,
+code.ascetic-css,
+code.color-brewer-css,
+code.grayscale-css,
+code.idea-css,
+code.vs-css,
+code.xcode-css {
+    background-color: #F9F9F9 !important;
+}
+
+blockquote {
+    padding: 10px;
+    margin-left: 0;
+    color: #666;
+    border: 0 none;
+    border-left: 4px solid #EEE;
+}
+
+blockquote p:last-child,
+blockquote ul:last-child,
+blockquote ol:last-child {
+    margin-bottom: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: #FFF;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #DDD;
+}
+
+table div {
+    page-break-inside: avoid;
+}
+
+th, td {
+    text-align: left;
+}
+
+table > thead > tr > th,
+table > tbody > tr > th,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > tbody > tr > td,
+table > tfoot > tr > td {
+    padding: 8px 14px;
+    vertical-align: top;
+    border-top: 1px solid #DDD;
+}
+
+table > caption + thead > tr:first-child > th,
+table > colgroup + thead > tr:first-child > th,
+table > thead:first-child > tr:first-child > th,
+table > caption + thead > tr:first-child > td,
+table > colgroup + thead > tr:first-child > td,
+table > thead:first-child > tr:first-child > td {
+    border-top: 0;
+}
+
+table > tbody + tbody {
+    border-top: 2px solid #DDD;
+}
+
+table table {
+    background-color: #FFF;
+}
+
+table > thead > tr > th,
+table > tbody > tr > th,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > tbody > tr > td,
+table > tfoot > tr > td {
+    border: 1px solid #DDD;
+}
+
+table > thead > tr > th,
+table > thead > tr > td {
+    border-bottom-width: 2px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 90%;
+}
+
+table > tbody > tr:nth-of-type(odd) {
+    background-color: #F9F9F9;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: inherit;
+    font-weight: normal;
+    line-height: 1.1;
+    color: #111;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 0;
+    page-break-after: avoid;
+}
+
+h1, h2 {
+    border-bottom: 1px solid #EEE;
+    padding-bottom: 7px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 17px;
+}
+
+h3 {
+    font-size: 15px;
+}
+
+h4 {
+    font-size: 11px;
+}
+
+h5, h6 {
+    font-size: 10px;
+    font-weight: bold;
+    color: #666;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+input[type="checkbox"] {
+    margin-right: 6px;
+    position: relative;
+    bottom: 1px;
+}
+
+ul,
+ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+ul li,
+ol li {
+    margin-bottom: 2px;
+}
+
+dl {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-left: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: #4078C0;
+}
+
+.new-page,
+.page-break,
+.next-page,
+.page-end {
+    page-break-before: always;
+}
+
+#pageHeader,
+#pageHeader a,
+#pageHeader a:visited {
+    color: #777;
+}
+
+#pageHeader span {
+    vertical-align: middle;
+}
+
+#pageFooter {
+    border-top: 1px solid #EEE;
+    padding-top: 5px;
+    color: #777;
+    font-size: 80%;
+}
+#pageFooter a,
+#pageFooter a:visited {
+    color: #777;
+}
+
 /* CSS for Markdown text - v0.1 - https://gist.github.com/jbeyerstedt/133a7e9c00c8eb68aedb*/
 
 body {
@@ -322,70 +586,113 @@ li ol > li {
 li ol > li:before {
   content: counters(item, ".") " "; }
 
-</style>
-<title>Kirby CMS Administratorhandbuch</title>
+/**
+ * GitHub Gist Theme
+ * Author : Louis Barranqueiro - https://github.com/LouisBarranqueiro
+ */
 
+.hljs {
+  display: block;
+  background: white;
+  padding: 0.5em;
+  color: #333333;
+  overflow-x: auto;
+}
+
+.hljs-comment,
+.hljs-meta {
+  color: #969896;
+}
+
+.hljs-string,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-strong,
+.hljs-emphasis,
+.hljs-quote {
+  color: #df5000;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-type {
+  color: #a71d5d;
+}
+
+.hljs-literal,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-attribute {
+  color: #0086b3;
+}
+
+.hljs-section,
+.hljs-name {
+  color: #63a35c;
+}
+
+.hljs-tag {
+  color: #333333;
+}
+
+.hljs-title,
+.hljs-attr,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #795da3;
+}
+
+.hljs-addition {
+  color: #55a532;
+  background-color: #eaffea;
+}
+
+.hljs-deletion {
+  color: #bd2c00;
+  background-color: #ffecec;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+pre { white-space: pre-wrap !important; word-break: break-word !important; overflow: hidden !important;}
+</style>
 </head>
 <body>
-<h1>Kirby CMS Administratorhandbuch</h1>
-
-<p><strong>von Jannik Beyerstedt</strong>, v1.0.0<br/>
+<div id="pageContent">
+<h1 id="kirby-cms-administratorhandbuch">Kirby CMS Administratorhandbuch</h1>
+<p><strong>von Jannik Beyerstedt</strong>, v1.1.0<br>
 <em>als Ergänzung zum Benutzerhandbuch</em></p>
-
-<h2>Einführung:</h2>
-
-<p>Dieses Administratorhandbuch beschreibt etwas genauer den Aufbau von kirby und die manuellen Möglichkeiten.<br/>
-Es wird jedoch nicht die gesamte Programmierung von kirby-Seiten beschrieben. Für weitergehende Fragen oder Probleme <a href="mailto:jannik@beyerstedt.de">kontaktieren Sie mich</a> doch bitte oder schauen Sie selbst in die (englischsprachige) <a href="http://getkirby.com">Dokumentation von kirby</a>.</p>
-
-<h2>Updates <em>mit der Update-Seite</em>:</h2>
-
-<p>Um die kirby-Installation zu aktualisieren kann man die (unsichtbare) Seite "update" im panel auswählen. Diese hat im panel selbst erst einmal keine Funktion, dafür muss man auf "Seite öffnen" klicken. Dann öffnet sich eine Seite, die nur sichtbar ist, wenn man angemeldet ist und die Benutzergruppe Admin hat.</p>
-
-<p>Über diese Seite können nun bash-scripte ausgeführt werden. Der Inhalt des Scripts, das ausgeführt wird, ist jeweils über den "ausführen"-Button zu sehen.<br/>
-<strong>Diese Scripte sind kein Spielzeug! Bitte nur ausführen, wenn die Auswirkungen bekannt sind!</strong></p>
-
-<p>Für ein normales Update, das ich per Mail auch ankündige und dann vorher getestet habe, reicht der erste Button aus. Damit werden die kirby-Seite, kirby selbst und das panel, sowie alle Module aktualisiert. Danach wird dr cache geleert, damit die Seite neu generiert wird.
-Bitte lesen Sie sich die Ausgabe des Scripts durch! Eine Meldung wie <code>Not currently on any branch</code> sollte bitte umgehend gemeldet werden.</p>
-
-<h2>neue Benutzer:</h2>
-
-<p>Um einen neuen Benutzer anzulegen geht man im panel oben links auf diese drei waagerechten Striche und in diesem Menü auf "Benutzer".<br/>
+<h2 id="einfuhrung">Einführung:</h2>
+<p>Dieses Administratorhandbuch beschreibt etwas genauer den Aufbau von kirby und die manuellen Möglichkeiten.<br>
+Es wird jedoch nicht die gesamte Programmierung von kirby-Seiten beschrieben. Für weitergehende Fragen oder Probleme <a href="mailto:code@jannikbeyerstedt.de">kontaktieren Sie mich</a> doch bitte oder schauen Sie selbst in die (englischsprachige) <a href="http://getkirby.com">Dokumentation von kirby</a>.</p>
+<h2 id="neue-benutzer">neue Benutzer:</h2>
+<p>Um einen neuen Benutzer anzulegen geht man im panel oben links auf diese drei waagerechten Striche und in diesem Menü auf &quot;Benutzer&quot;.<br>
 Hier können neue Benutzer angelegt werden. In der Standard-Installation gibt es nur zwei Benutzergruppen <code>admin</code> und <code>editor</code>. Der Admin kann dabei auch bei allen Benutzer die Passwörter setzen. Der Editor hat als einzige Einschränkung, dass er keine Benutzer bearbeiten oder anlegen kann.</p>
-
-<h2>Konfiguration <em>in der config.php</em>:</h2>
-
-<p>Für einige weitergehende Konfigurationen gibt es die Datei <code>/site/config/config.php</code>, die aber mit einem FTP-Programm oder über die Komandozeile der Servers bearbeitet werden muss.<br/>
+<h2 id="konfiguration-in-der-configphp">Konfiguration <em>in der config.php</em>:</h2>
+<p>Für einige weitergehende Konfigurationen gibt es die Datei <code>/site/config/config.php</code>, die aber mit einem FTP-Programm oder über die Komandozeile der Servers bearbeitet werden muss.<br>
 Eingestellt werden dürfen nur folgende Attribute:</p>
-
 <ul>
 <li><code>c::set('cache', true)</code> schaltet den cache an oder aus</li>
 <li><code>c::set('ssl', true)</code> hiermit kann man die ganze Seite von http aus https umleiten.</li>
 </ul>
-
-
 <p>Für alle weiteren Einstellungen bitte mich kontaktieren!</p>
-
-<hr />
-
-<h2>Tiefergehende Informationen:</h2>
-
+<hr>
+<h2 id="tiefergehende-informationen">Tiefergehende Informationen:</h2>
 <p>In diesem Kapitel wird die grundlegende Struktur von kirby (oberflächlich) erklärt.</p>
-
-<h3>die Struktur von kirby</h3>
-
-<p>In kirby wird der Inhalt ganz klar von den templates und damit der Funktion der Seite selbst getrennt. Der Inhalt liegt in dem Ordner <code>content</code>, alle Dateien zur Funktion der Seite in <code>site</code>, generische Bilder, wie Logos in <code>assets/images</code>.<br/>
+<h3 id="die-struktur-von-kirby">die Struktur von kirby</h3>
+<p>In kirby wird der Inhalt ganz klar von den templates und damit der Funktion der Seite selbst getrennt. Der Inhalt liegt in dem Ordner <code>content</code>, alle Dateien zur Funktion der Seite in <code>site</code>, generische Bilder, wie Logos in <code>assets/images</code>.<br>
 In <code>site/templates</code> gibt es nun verschiedene Vorlagen für verschiedene Seiten.</p>
-
-<h3>die Ordnerstruktur des Inhalts</h3>
-
-<p>Im Ordnr <code>content</code> wird jede Seite durch einen Ordner repräsentiert. Diese Ordner muss mindestens ein Textdokument (.txt) enthalten, das den Inhalt der Seite einthält. Den Aufbau dieser Datei erkläre ich hier nicht weiter, da das panel für dessen Manipulation da ist.<br/>
-Außerdem können in diesen Ordner Bilder und andere Dokuemente hochgeladen werden, die zu dieser Seite gehören.<br/>
+<h3 id="die-ordnerstruktur-des-inhalts">die Ordnerstruktur des Inhalts</h3>
+<p>Im Ordnr <code>content</code> wird jede Seite durch einen Ordner repräsentiert. Diese Ordner muss mindestens ein Textdokument (.txt) enthalten, das den Inhalt der Seite einthält. Den Aufbau dieser Datei erkläre ich hier nicht weiter, da das panel für dessen Manipulation da ist.<br>
+Außerdem können in diesen Ordner Bilder und andere Dokuemente hochgeladen werden, die zu dieser Seite gehören.<br>
 Der Titel der Seite, der auch angezeigt wird ist in dem Textdokument enthalten. Der Ordnername hat zwei Aufgaben. Zuerst bestimmt dieser unter welcher URL die Seite erreichbar ist, zum anderen wird der Ordnername zur Sortierung genutzt. Eine Nummer am Anfang heißt, dass die Seite sichtbar ist.</p>
-
 <p>Wie wird nun das Template aus <code>site/template</code> ausgewählt? Dafür ist der Dateiname des Textdokuments mit dem Inhalt zuständig. Diese muss gleich dem auszuwählenden Template sein.</p>
-
 <p>Bilder werden entweder über den Dateinamen sortiert oder es muss eine weitere Textdatei mit NameDerDatei.txt angelegt werden. Das sollte aber dem Panel überlassen werden.</p>
-
 <p>Dies ist eine vereinfachte Ansicht. Teilweise haben die Textdateien auch einen Namen zu dem es gar kein Template gibt. Dieser dient dann der Steuerung des Panels oder diese Seite stellt nur eine Sektion einer anderen Seite dar, aber gar keine eigenständige Seite.</p>
-</body>
+
+</div></body>
 </html>

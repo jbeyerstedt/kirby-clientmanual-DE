@@ -1,9 +1,273 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta charset="UTF-8">
+<title>kirbyManual_benutzer.html</title>
 <style>
+* {
+    overflow: visible !important;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    box-decoration-break: clone;
+}
+
+html, body {
+    background: #FFF;
+    font-family: "Segoe UI", Arial, freesans, sans-serif;
+    font-size: 10px;
+    line-height: 1.4;
+    color: #333;
+    word-wrap: break-word;
+	hyphens: auto;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 4px solid #EEE;
+}
+
+code {
+    padding: .1em .4em;
+    display: inline-block;
+    background-color: #f9f2f4;
+    color: #c7254e;
+    border-radius: 3px;
+    border: 0 none;
+    font: 9px Consolas, "Liberation Mono", Menlo, "Courier New", Courier, monospace;
+    hyphens: manual;
+}
+
+pre code {
+    padding: 15px;
+    display: block;
+    background-color: #F9F9F9;
+    color: #555;
+    font-size: 10px;
+    box-shadow: inset -1px -1px 0 rgba(0, 0, 0, .08);
+    word-wrap: normal;
+}
+
+/* replace light background for some hljs themes */
+code.github-css,
+code.github-gist-css,
+code.tomorrow-css,
+code.default-css,
+code.googlecode-css,
+code.ascetic-css,
+code.color-brewer-css,
+code.grayscale-css,
+code.idea-css,
+code.vs-css,
+code.xcode-css {
+    background-color: #F9F9F9 !important;
+}
+
+blockquote {
+    padding: 10px;
+    margin-left: 0;
+    color: #666;
+    border: 0 none;
+    border-left: 4px solid #EEE;
+}
+
+blockquote p:last-child,
+blockquote ul:last-child,
+blockquote ol:last-child {
+    margin-bottom: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: #FFF;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #DDD;
+}
+
+table div {
+    page-break-inside: avoid;
+}
+
+th, td {
+    text-align: left;
+}
+
+table > thead > tr > th,
+table > tbody > tr > th,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > tbody > tr > td,
+table > tfoot > tr > td {
+    padding: 8px 14px;
+    vertical-align: top;
+    border-top: 1px solid #DDD;
+}
+
+table > caption + thead > tr:first-child > th,
+table > colgroup + thead > tr:first-child > th,
+table > thead:first-child > tr:first-child > th,
+table > caption + thead > tr:first-child > td,
+table > colgroup + thead > tr:first-child > td,
+table > thead:first-child > tr:first-child > td {
+    border-top: 0;
+}
+
+table > tbody + tbody {
+    border-top: 2px solid #DDD;
+}
+
+table table {
+    background-color: #FFF;
+}
+
+table > thead > tr > th,
+table > tbody > tr > th,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > tbody > tr > td,
+table > tfoot > tr > td {
+    border: 1px solid #DDD;
+}
+
+table > thead > tr > th,
+table > thead > tr > td {
+    border-bottom-width: 2px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 90%;
+}
+
+table > tbody > tr:nth-of-type(odd) {
+    background-color: #F9F9F9;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: inherit;
+    font-weight: normal;
+    line-height: 1.1;
+    color: #111;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 0;
+    page-break-after: avoid;
+}
+
+h1, h2 {
+    border-bottom: 1px solid #EEE;
+    padding-bottom: 7px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 17px;
+}
+
+h3 {
+    font-size: 15px;
+}
+
+h4 {
+    font-size: 11px;
+}
+
+h5, h6 {
+    font-size: 10px;
+    font-weight: bold;
+    color: #666;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+input[type="checkbox"] {
+    margin-right: 6px;
+    position: relative;
+    bottom: 1px;
+}
+
+ul,
+ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+ul li,
+ol li {
+    margin-bottom: 2px;
+}
+
+dl {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-left: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: #4078C0;
+}
+
+.new-page,
+.page-break,
+.next-page,
+.page-end {
+    page-break-before: always;
+}
+
+#pageHeader,
+#pageHeader a,
+#pageHeader a:visited {
+    color: #777;
+}
+
+#pageHeader span {
+    vertical-align: middle;
+}
+
+#pageFooter {
+    border-top: 1px solid #EEE;
+    padding-top: 5px;
+    color: #777;
+    font-size: 80%;
+}
+#pageFooter a,
+#pageFooter a:visited {
+    color: #777;
+}
+
 /* CSS for Markdown text - v0.1 - https://gist.github.com/jbeyerstedt/133a7e9c00c8eb68aedb*/
 
 body {
@@ -322,119 +586,154 @@ li ol > li {
 li ol > li:before {
   content: counters(item, ".") " "; }
 
-</style>
-<title>Kirby CMS Benutzerhandbuch</title>
+/**
+ * GitHub Gist Theme
+ * Author : Louis Barranqueiro - https://github.com/LouisBarranqueiro
+ */
 
+.hljs {
+  display: block;
+  background: white;
+  padding: 0.5em;
+  color: #333333;
+  overflow-x: auto;
+}
+
+.hljs-comment,
+.hljs-meta {
+  color: #969896;
+}
+
+.hljs-string,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-strong,
+.hljs-emphasis,
+.hljs-quote {
+  color: #df5000;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-type {
+  color: #a71d5d;
+}
+
+.hljs-literal,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-attribute {
+  color: #0086b3;
+}
+
+.hljs-section,
+.hljs-name {
+  color: #63a35c;
+}
+
+.hljs-tag {
+  color: #333333;
+}
+
+.hljs-title,
+.hljs-attr,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #795da3;
+}
+
+.hljs-addition {
+  color: #55a532;
+  background-color: #eaffea;
+}
+
+.hljs-deletion {
+  color: #bd2c00;
+  background-color: #ffecec;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+pre { white-space: pre-wrap !important; word-break: break-word !important; overflow: hidden !important;}
+</style>
 </head>
 <body>
-<h1>Kirby CMS Benutzerhandbuch</h1>
-
-<p><strong>von Jannik Beyerstedt</strong>, v1.0.0</p>
-
-<h2>Einführung:</h2>
-
-<p>"kirby" ist ein dateibasiertes CMS, es können also alle Inhalte mit einem Texteditor und einem Dateibrowser bearbeitet werden. Für eine bequemere Bearbeitung gibt es jedoch eine Web-Bedienoberfläche, mit der (fast) alle Funktionen gesteuert werden können.<br/>
-Diese Bedienoberfläche heißt "panel" und wird in anderes Systemen auf als "backend" oder "Administrator-login" bezeichnet. In diesem Benutzerhandbuch wird der Umgang mit dem panel beschrieben, Details zu den Tiefen des Systems finden sich in meinem Adminitratorhandbuch.<br/>
-Ein weiterer Begriff ist das "frontend", welches den für den normalen Besucher sichtbaren Teil beschreibt, also die Webseite an sich.<br/>
+<div id="pageContent">
+<h1 id="kirby-cms-benutzerhandbuch">Kirby CMS Benutzerhandbuch</h1>
+<p><strong>von Jannik Beyerstedt</strong>, v1.1.0</p>
+<h2 id="einfuhrung">Einführung:</h2>
+<p>&quot;kirby&quot; ist ein dateibasiertes CMS, es können also alle Inhalte mit einem Texteditor und einem Dateibrowser bearbeitet werden. Für eine bequemere Bearbeitung gibt es jedoch eine Web-Bedienoberfläche, mit der (fast) alle Funktionen gesteuert werden können.<br>
+Diese Bedienoberfläche heißt &quot;panel&quot; und wird in anderes Systemen auf als &quot;backend&quot; oder &quot;Administrator-login&quot; bezeichnet. In diesem Benutzerhandbuch wird der Umgang mit dem panel beschrieben, Details zu den Tiefen des Systems finden sich in meinem Adminitratorhandbuch.<br>
+Ein weiterer Begriff ist das &quot;frontend&quot;, welches den für den normalen Besucher sichtbaren Teil beschreibt, also die Webseite an sich.<br>
 Für die hier beschriebenen URLs gilt, dass diese immer den Teil nach der Domain wiedergeben. Wenn also eine URL <code>/panel</code> heißt, muss <code>ihreDomain.de/panel</code> in  den Browser eingegeben werden.</p>
-
-<h2>Das Panel:</h2>
-
+<h2 id="das-panel">Das Panel:</h2>
 <p>Das Panel ist immer unter der URL <code>/panel</code> zu finden. Hier muss man sich zunächst mit einem vorhandenen Account anmelden um die Seite bearbeiten zu können.</p>
-
 <p>Zuerst ist das sog. Dashboard zu sehen. Auf der linken Seite stehen immer die Seiten und Ordner der Webseite. Diese Module werden in den nächsten Kapiteln erklärt.</p>
-
-<h3>Seiteneinstellungen/ Seitenvariablen</h3>
-
-<p>Die globalen Einstellungen der Webseite geben alle Informationen wieder, die auf der gesamten Webseite gebrauct werden. Das Menü dafür ist unter dem Knopf ganz oben links unter "Einstellungen" zu finden.</p>
-
+<h3 id="seiteneinstellungen-seitenvariablen">Seiteneinstellungen/ Seitenvariablen</h3>
+<p>Die globalen Einstellungen der Webseite geben alle Informationen wieder, die auf der gesamten Webseite gebraucht werden. Das Menü dafür ist unter dem Knopf ganz oben links unter &quot;Einstellungen&quot; zu finden.</p>
 <p>Die Felder sollten sich in der Regel selbst erklären, einige (vor allem die Metadaten) führe ich hier aber noch einmal auf:</p>
-
 <ul>
 <li>Titel der Webseite: Name im Tab des Browsers</li>
 <li>Autor: für Suchmaschinen</li>
 <li>Beschreibung: der kurze Text bei den Suchergebnissen von google und co</li>
-<li>Stichwörter:  auch für Suchmaschinen, wird zum Einordnen der Seite genutzt</li>
 </ul>
-
-
-<h3>die Seitenstruktur</h3>
-
-<p>In kirby gibt es erst einmal zwei Arten von Seiten: sichtbar und unsichtbar. Sichtbare Seiten werden bei meinen Webseiten dafür genutzt, dass diese in Menüs automatisch auftauchen.<br/>
-Dass eine Seite unsichtbar ist heißt nicht, dass diese nicht aufgerufen werden kann, sondern, dass diese dann per Hand verlinkt werden muss. Das sind z.B. Seiten wie die Error-Seite (wenn eine falsche URL aufgerufen wurde - dieser 404 Fehler) oder auch das Impressum, das meist in der Fußzeile verlinkt ist, aber nicht im Menü auftaucht.<br/>
-Sichbare Seiten können dann auch noch sortiert werden, um die Reihenfolge in den Menüs zu steuern. Das geht per drag and drop, wenn man auf "bearbeiten" über der Liste klickt.</p>
-
-<hr />
-
-<h3>neue Seite erstellen</h3>
-
-<p>Eine neue Seite kann mit dem "hinzufügen"-Knopf erstellt werden. Dafür muss ein Titel festgegelt werden, aus dem dann ein URL-Anhang gegeriert wird. Das ist der Teil, der dann in der URL-Zeile des Browsers steht. Dieses Feld wird automtisch so bearbeitet, dass die Regeln für URLs beachtet werden.<br/>
+<h3 id="die-seitenstruktur">die Seitenstruktur</h3>
+<p>In kirby gibt es erst einmal zwei Arten von Seiten: sichtbar und unsichtbar. Sichtbare Seiten werden bei meinen Webseiten dafür genutzt, dass diese in Menüs automatisch auftauchen.<br>
+Dass eine Seite unsichtbar ist heißt nicht, dass diese nicht aufgerufen werden kann, sondern, dass diese dann per Hand verlinkt werden muss. Das sind z.B. Seiten wie die Error-Seite (wenn eine falsche URL aufgerufen wurde - dieser 404 Fehler) oder auch das Impressum, das meist in der Fußzeile verlinkt ist, aber nicht im Menü auftaucht.<br>
+Sichbare Seiten können dann auch noch sortiert werden, um die Reihenfolge in den Menüs zu steuern. Das geht per drag and drop, wenn man auf &quot;bearbeiten&quot; über der Liste klickt.</p>
+<hr>
+<h3 id="neue-seite-erstellen">neue Seite erstellen</h3>
+<p>Eine neue Seite kann mit dem &quot;hinzufügen&quot;-Knopf erstellt werden. Dafür muss ein Titel festgegelt werden, aus dem dann ein URL-Anhang gegeriert wird. Das ist der Teil, der dann in der URL-Zeile des Browsers steht. Dieses Feld wird automtisch so bearbeitet, dass die Regeln für URLs beachtet werden.<br>
 Als letztes muss eine Vorlage ausgewählt werden. Diese regelt welche Funktion die Seite erfüllen soll und damit auch wie diese aussieht.</p>
-
-<p>Eine neue Seite ist beim Erstellen immer erst einmal unsichtbar. Unter "bearbeiten" kann man dies ändern, indem man die Seite von rechts nach links zieht. Dabei kann auch direkt die Sortierung geändert werden.</p>
-
-<h3>eine Seite bearbeiten</h3>
-
-<p>Erst einmal ein paar Worte zum prinzipiellen Vorgehen. Im nächsten Kapitel geht es dann darum, wie Texte formatiert werden können.<br/>
+<p>Eine neue Seite ist beim Erstellen immer erst einmal unsichtbar. Unter &quot;bearbeiten&quot; kann man dies ändern, indem man die Seite von rechts nach links zieht. Dabei kann auch direkt die Sortierung geändert werden.</p>
+<h3 id="eine-seite-bearbeiten">eine Seite bearbeiten</h3>
+<p>Erst einmal ein paar Worte zum prinzipiellen Vorgehen. Im nächsten Kapitel geht es dann darum, wie Texte formatiert werden können.<br>
 Ein weiters Vorwort noch: Es kann sein, dass nicht auf allen Seiten alle Funktionen, die in den nächsten Abschnitten beschrieben werden, verfügbar sind. Das hat dann in der Regel auch einen tieferen Sinn, bei Zweifeln aber sonst einfach nachfragen.</p>
-
 <p>Wenn man nun auf eine Seite klickt, sieht man eine zweigeteilte Ansicht. In der linken Leiste kann man wieder weitere Seiten hinzufügen, wie schon vom Dashboard bekannt. Außerdem können der Seite Dateien hinzugefügt werden. Diese werden dann - je nachdem wie Ihre Webseite gestaltet ist - automatisch angezeigt oder können im Text verlinkt werden.</p>
-
-<p>Auf der rechten Seite kann der Inhalt der Seite bearbeitet werden. Je nachdem welche Vorlage gewäht wurde und wie die Seite gestaltet ist gibt es mehr oder weniger verschiedene Felder und Funktionen. Alle Seite haben jedoch einen Titel, der meist oben auf der Seite als Überschrift des Artikels (o.ä.) angezeigt wird. Außerdem ist dies meistens auch der Title, der im Menü verwendet wird.<br/>
-Danach gibt es den Haupttext, sowie evtl. weitere Textbereiche und Optionen. Diese sind dann aber mit selbsterklärenden Überschriften versehen.<br/>
-Alternativ kann eine Seite auch nur als "Ordner", also eine Sammlung von weiteren Seite zur Strukurierung der Inhalte dienen.</p>
-
+<p>Auf der rechten Seite kann der Inhalt der Seite bearbeitet werden. Je nachdem welche Vorlage gewäht wurde und wie die Seite gestaltet ist gibt es mehr oder weniger verschiedene Felder und Funktionen. Alle Seite haben jedoch einen Titel, der meist oben auf der Seite als Überschrift des Artikels (o.ä.) angezeigt wird. Außerdem ist dies meistens auch der Title, der im Menü verwendet wird.<br>
+Danach gibt es den Haupttext, sowie evtl. weitere Textbereiche und Optionen. Diese sind dann aber mit selbsterklärenden Überschriften versehen.<br>
+Alternativ kann eine Seite auch nur als &quot;Ordner&quot;, also eine Sammlung von weiteren Seite zur Strukurierung der Inhalte dienen.</p>
 <p>Nachdem man gespeichert hat, kann die Seite über den entsprechenden Knopf auf der linksen Seite geöffnet werden.</p>
-
 <p>Teilweise werden Unterseiten auch dafür verwendet weitere Blöcke auf einer Seite zu strukturieren. Diese sind dann nicht einzeln sichtbar. Das wird dann aber einzeln erklärt.</p>
-
-<hr />
-
-<h2>Texte:</h2>
-
-<p>kirby verhält sich bei der Bearbeitung von Texten etwas anders als andere Textbearbeitungsprogramme, die Sie vielleicht kennen. Man kann nämlich nicht direkt die Schriftgröße und andere Texteinstellungen ändern. Dafür wird jedoch eine auf Webseite angepasste "Sprache" verendet, die "markdown" heißt. Das ist jetzt aber nicht so kompliziert, wie es vielleicht auf den ersten Blick wirkt, Sie müssen nicht programmieren können.<br/>
-Bei der Gestaltung von Webseiten ist es üblich das Aussehen der Text zentral festzulegen. Daher kann die Schriftgröße und von Überschriften und Text nicht einzeln festgelegt werden. Der Fließtext kann ganz normal aufgeschrieben werden, Überschriften müssen speziell gekennzeichnet werden. Um Texte gut strukturieren zu können gibt es sechs verschiedene Überschriften, in der Regel solten aber nur die Überschriften 3-5 verwendet werden, wobei die Überschrift 3 größte Überschrift für normale Texte ist. (Die Überschriften 1 und 2 sind für andere Zwecke reseviert.)<br/>
-Unter den unsichtbaren Seiten gibt es eine namens "z-Hilfe", die die Überschriften und die Markdown-Syntax auch noch einmal erklärt.</p>
-
-<h3>Markdown</h3>
-
+<hr>
+<h2 id="texte">Texte:</h2>
+<p>kirby verhält sich bei der Bearbeitung von Texten etwas anders als andere Textbearbeitungsprogramme, die Sie vielleicht kennen. Man kann nämlich nicht direkt die Schriftgröße und andere Texteinstellungen ändern. Dafür wird jedoch eine auf Webseite angepasste &quot;Sprache&quot; verendet, die &quot;markdown&quot; heißt. Das ist jetzt aber nicht so kompliziert, wie es vielleicht auf den ersten Blick wirkt, Sie müssen nicht programmieren können.<br>
+Bei der Gestaltung von Webseiten ist es üblich das Aussehen der Text zentral festzulegen. Daher kann die Schriftgröße und von Überschriften und Text nicht einzeln festgelegt werden. Der Fließtext kann ganz normal aufgeschrieben werden, Überschriften müssen speziell gekennzeichnet werden. Um Texte gut strukturieren zu können gibt es sechs verschiedene Überschriften, in der Regel solten aber nur die Überschriften 3-5 verwendet werden, wobei die Überschrift 3 größte Überschrift für normale Texte ist. (Die Überschriften 1 und 2 sind für andere Zwecke reseviert.)<br>
+Unter den unsichtbaren Seiten gibt es eine namens &quot;z-Hilfe&quot;, die die Überschriften und die Markdown-Syntax auch noch einmal erklärt.</p>
+<h3 id="markdown">Markdown</h3>
 <p>Die Elemente, die am häufigsten benötigt werden sind:</p>
-
 <ul>
-<li>Überschriften: <code>#</code> vor die Überschrift setzen. Anzahl entspricht dem Rang der Überschrift (Überschrift&nbsp;3&nbsp;=>&nbsp;<code>###</code>)</li>
+<li>Überschriften: <code>#</code> vor die Überschrift setzen. Anzahl entspricht dem Rang der Überschrift (Überschrift 3 =&gt; <code>###</code>)</li>
 <li>Fettdruck: Den Text der fett geschreben werden soll in doppente Sternchen <code>**</code> setzen</li>
 <li>Kursivdruck: Den Text der fett geschreben werden soll in einfache Sternchen <code>*</code> setzen</li>
-<li>Listen: einfach <code>-</code> an den Anfang dr Zeile setzen. Jedoch vorher eine Zeile leer lassen<br/>
+<li>Listen: einfach <code>-</code> an den Anfang dr Zeile setzen. Jedoch vorher eine Zeile leer lassen<br>
 Für nummerierte Listen muss man am Anfang der Zeile <code>1.</code> schreiben, die Reihenfolge der Nummern ist egal.</li>
 <li>Zeilenumbruch: einen einfache Zeilenumbruch erhält man durch eine neue Zeile</li>
 <li>Absatz: für einen Absatz hingegen muss man eine Zeile frei lassen</li>
 </ul>
-
-
-<hr />
-
-<h3>Kirbytags</h3>
-
+<hr>
+<h3 id="kirbytags">Kirbytags</h3>
 <p>Die Basis-Formatierungen von Markdown wurden in kirby noch um sog. Tags ersetzt:</p>
-
-<p>Kirbytags haben immer eine einheitliche Form:<br/>
-<code>(name: Wert attribut: Wert_Attribut)</code><br/>
+<p>Kirbytags haben immer eine einheitliche Form:<br>
+<code>(name: Wert attribut: Wert_Attribut)</code><br>
 Eine normale runde Klammer leitet den Kirbytag ein. Danach folgt der Name des Tags und mit einem Doppelpunkt werden die Werte übergeben. Einige Kirbytags haben noch weitere Optionen, die durch weitere Paare aus Attribut-Name und Wert eingestellt werden. Diese sind wieder durch einen Doppelpunkt getrennt. Nun ein paar Beispiele:</p>
-
 <ul>
-<li><code>(link: http://google.com text: Eine Suchmaschine popup:yes)</code><br/>
+<li><code>(link: http://google.com text: Eine Suchmaschine popup:yes)</code><br>
 Für einen Link reicht das Ziel, dann wird als Text die URL angezeigt. Alternativ kann man einen eigenen Text hinzufügen. Außerdem kann man mit <code>popup:yes</code> festlegen, dass der Link in einem neuen Tab geöffnet werden soll.</li>
-<li><code>(link: impressum)</code><br/>
+<li><code>(link: impressum)</code><br>
 Interne Links kann man auch erstellen lassen. In diesem Beispiel ohne speziellen Text.</li>
-<li><code>&lt;email@domain.de&gt;</code> oder <code>(email: email@domain.de)</code><br/>
+<li><code>&lt;email@domain.de&gt;</code> oder <code>(email: email@domain.de)</code><br>
 Für einen E-Mail-Link. Auch hier kann ein eigener Text für den Fließtext definiert werden wie <code>text: kontaktieren Sie mich</code>.</li>
-<li><code>(image: bildname.jpg)</code><br/>
-Um ein Bild in den Text einzufügen, das vorher in dieser Seite hochgeladen wurde (muss links unter "Dateien" auftauchen)</li>
-<li><code>(file: download.pdf)</code><br/>
+<li><code>(image: bildname.jpg)</code><br>
+Um ein Bild in den Text einzufügen, das vorher in dieser Seite hochgeladen wurde (muss links unter &quot;Dateien&quot; auftauchen)</li>
+<li><code>(file: download.pdf)</code><br>
 Um eine Datei in den Text einzufügen. Auch hier kann man wieder einen Text festlegen.</li>
 </ul>
-
-
 <p>Es gibt noch viele weitere Möglichkeiten, dies sind aber die gängigsten. Bei manchen Seiten habe ich noch weitere Kirytags geschrieben oder installiert. Diese sind dann auch in der <code>x-Hilfe</code>-Seite zu finden.</p>
-</body>
+
+</div></body>
 </html>
